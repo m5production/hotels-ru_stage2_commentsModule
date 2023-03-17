@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>Доска объявлений</title>
+</head>
+
+<body>
+  <header>
+    <div class="content-wrapper">
+      <h1 class="main-header">Сайт с комментариями</h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="content-wrapper">
+      <form class="comment-user-form" action="#comments-list">
+        <h2>Создать новый комментарий</h2>
+
+        <div class="form-item">
+          <label for="username-input">Имя пользователя</label>
+          <input class="username-input" id="username-input" required type="text" name="username"
+            placeholder="Имя комментария">
+        </div>
+
+        <div class="form-item">
+          <label for="comment-text-input">Текст комментария</label>
+          <textarea class="comment-text-input" id="comment-textarea" name="user-comment" required
+            placeholder="Текст комментария"></textarea>
+        </div>
+
+        <div class="date-set form-item">
+          <label for="user-date">Укажите дату публикации</label>
+          <input class="user-date-input" id="user-date" name="publication-date" type="date">
+        </div>
+        <div>
+          <input type="submit" value="Опубликовать">
+        </div>
+      </form>
+
+      <div class="comments-list" id="comments-list">
+
+        <template id="comment-template">
+          <div class="comment-container">
+            <div class="comment-header">
+              <span class="user-name">Имя пользователя</span>
+              <span class="publication-date">Дата</span>
+            </div>
+            <div class="comment-body">
+              <div class="comment-text">Тело комментария</div>
+              <div class="remove-btn"></div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+
+  </main>
+  <footer></footer>
+
+  <script type="module" src="./scripts/index.js"></script>
+</body>
+
+</html>
