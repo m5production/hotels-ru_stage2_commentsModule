@@ -1,5 +1,6 @@
 $standard-padding: 1.25rem;
 $standard-border-radius: 0.7rem;
+$btn-size: 1.4rem;
 
 * {
   box-sizing: border-box;
@@ -89,20 +90,47 @@ $standard-border-radius: 0.7rem;
   flex-grow: 1;
 }
 
-.remove-btn {
-  width: 2rem;
-  height: 3rem;
+.comment-btn {
+  width: $btn-size;
+  height: $btn-size;
   background-image: url('../assets/trash-bin.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  
+
   transition: 0.3s;
+}
+
+#like-checkbox {
+  display: none;
+
+  &:checked ~ .like-btn {
+    background-image: url('../assets/like-btn-hover.svg');
+  }
+}
+
+.like-btn {
+  display: block;
+
+  margin-right: 1rem;
+
+  background-image: url('../assets/like-btn.svg');
+
+  transition: transform 0.05s;
+
+  &:active {
+    transform: scale(1.2);
+  }
 }
 
 @media (hover: hover) {
   .remove-btn:hover {
     background-image: url('../assets/trash-bin-hover.svg');
+    cursor: pointer;
+  }
+
+  .like-btn:hover {
+    background-image: url('../assets/like-btn-hover.svg');
     cursor: pointer;
   }
 }

@@ -82,9 +82,9 @@
   flex-grow: 1;
 }
 
-.remove-btn {
-  width: 2rem;
-  height: 3rem;
+.comment-btn {
+  width: 1.4rem;
+  height: 1.4rem;
   background-image: url("../assets/trash-bin.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -92,9 +92,30 @@
   transition: 0.3s;
 }
 
+#like-checkbox {
+  display: none;
+}
+#like-checkbox:checked ~ .like-btn {
+  background-image: url("../assets/like-btn-hover.svg");
+}
+
+.like-btn {
+  display: block;
+  margin-right: 1rem;
+  background-image: url("../assets/like-btn.svg");
+  transition: transform 0.05s;
+}
+.like-btn:active {
+  transform: scale(1.2);
+}
+
 @media (hover: hover) {
   .remove-btn:hover {
     background-image: url("../assets/trash-bin-hover.svg");
+    cursor: pointer;
+  }
+  .like-btn:hover {
+    background-image: url("../assets/like-btn-hover.svg");
     cursor: pointer;
   }
 }/*# sourceMappingURL=style.css.map */
